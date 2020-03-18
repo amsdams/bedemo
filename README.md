@@ -1,8 +1,10 @@
-prod database
+#DeDemo
 
-### create db, user, grant, exit
+# prod database using psql
 
-```
+## create db, user, grant, exit
+
+```bash
 psql
 ```
 
@@ -16,37 +18,52 @@ create user myuser with encrypted password 'mypass';
 
 ```sql
 grant all privileges on database bedemo to myuser;
+```
 
+```sql
+exit
+```
 
 # building
 
-## build frontend
+## frontend build
 
 ```bash
-cd src/main/web/bedemo/
-ng build --prod
+mvn clean install
 ```
 
-### run e2e in local browser
+or
+
+```bash
+cd src/main/web/
+ng build --prod
+```
+# frontend development
+
+```bash
+npm install
+ng serve
+```
+## test  e2e in local browser
 ```bash
 mvn spring-boot:run
 
-cd src/main/web/bedemo/
+cd src/main/web/
 ng e2e
 ```
 
-## build backend
+## development backend
+
+```bash
+mvn spring-boot:run
+```
+
+# build backend
 
 ```bash
 mvn clean install
 ```
 ## run 'prod'
-```bash
-mvn spring-boot:run -Dspring-boot.run.profiles=prod
-```
-
-
-## run 'dev' and 'test'
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
 ```

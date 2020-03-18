@@ -1,0 +1,93 @@
+<!-- 
+id?: number;
+
+
+	huidigeLeeftijdDeelnemer?: number;
+	gewenstePensioenLeeftijdDeelnemer?: number;
+	
+	huidigeWaardeBeleggingen?: number;
+	jaarlijksePremieStorting?: number;
+	
+	jaarlijksRendementBeleggingen?: number;
+	verwachteWaardePensioenResultaat?: number;
+    
+     -->
+<div class="card my-5">
+	<div class="card-body">
+		<form (ngSubmit)="onSubmit()" #verwachteWaardePensioenBerekeningForm="ngForm">
+			<!--start huidigeLeeftijdDeelnemer-->
+			<div class="form-group">
+				<label for="huidigeLeeftijdDeelnemer">Huidige leeftijd deelnemer</label>
+				<input type="number" [(ngModel)]="verwachteWaardePensioenBerekening.huidigeLeeftijdDeelnemer"
+					class="form-control" id="huidigeLeeftijdDeelnemer" name="huidigeLeeftijdDeelnemer"
+					placeholder="Invoer Huidige leeftijd deelnemer (35)" required #huidigeLeeftijdDeelnemer="ngModel">
+			</div>
+
+			<div *ngIf="huidigeLeeftijdDeelnemer.invalid && (huidigeLeeftijdDeelnemer.dirty || huidigeLeeftijdDeelnemer.touched)"
+				class="alert alert-danger">Huidige leeftijd deelnemer is
+				verplicht</div>
+			<!--end huidigeLeeftijdDeelnemer-->
+			<!--start gewenstePensioenLeeftijdDeelnemer-->
+
+			<div class="form-group">
+				<label for="gewenstePensioenLeeftijdDeelnemer">Gewenste pensioenleeftijd deelnemer</label>
+				<input type="number" [(ngModel)]="verwachteWaardePensioenBerekening.gewenstePensioenLeeftijdDeelnemer"
+					class="form-control" id="gewenstePensioenLeeftijdDeelnemer" name="gewenstePensioenLeeftijdDeelnemer"
+					placeholder="Invoer Gewenste pensioenleeftijd deelnemer (68)" required
+					#gewenstePensioenLeeftijdDeelnemer="ngModel">
+			</div>
+			<div *ngIf="gewenstePensioenLeeftijdDeelnemer.invalid && (gewenstePensioenLeeftijdDeelnemer.dirty || gewenstePensioenLeeftijdDeelnemer.touched)"
+				class="alert alert-danger">Gewenste pensioenleeftijd deelnemer is
+				verplicht</div>
+
+
+			<!--end gewenstePensioenLeeftijdDeelnemer-->
+			<!--start huidigeWaardeBeleggingen-->
+			<div class="form-group">
+				<label for="huidigeWaardeBeleggingen">Huidige waarde beleggingen</label>
+				<input type="number" [(ngModel)]="verwachteWaardePensioenBerekening.huidigeWaardeBeleggingen"
+					class="form-control" id="huidigeWaardeBeleggingen" name="huidigeWaardeBeleggingen"
+					placeholder="Invoer Huidige waarde beleggingen (100)" required #huidigeWaardeBeleggingen="ngModel">
+			</div>
+
+
+			<div *ngIf="huidigeWaardeBeleggingen.invalid && (huidigeWaardeBeleggingen.dirty || huidigeWaardeBeleggingen.touched)"
+				class="alert alert-danger">Huidige waarde beleggingen is verplicht</div>
+
+			<!--end huidigeWaardeBeleggingen-->
+
+			<!--start jaarlijksePremieStorting-->
+			<div class="form-group">
+				<label for="jaarlijksePremieStorting">Jaarlijkse premie storting</label>
+				<input type="number" [(ngModel)]="verwachteWaardePensioenBerekening.jaarlijksePremieStorting"
+					class="form-control" id="jaarlijksePremieStorting" name="jaarlijksePremieStorting"
+					placeholder="Invoer Jaarlijkse premie storting (434.38)" required #jaarlijksePremieStorting="ngModel">
+			</div>
+
+
+			<div *ngIf="jaarlijksePremieStorting.invalid && (jaarlijksePremieStorting.dirty || jaarlijksePremieStorting.touched)"
+				class="alert alert-danger">Jaarlijkse premie storting is verplicht</div>
+
+			<!--end jaarlijksePremieStorting-->
+			<!--start jaarlijksRendementBeleggingen-->
+
+			<div class="form-group">
+				<label for="jaarlijksRendementBeleggingen">Jaarlijks rendement beleggingen</label>
+				<input type="number" [(ngModel)]="verwachteWaardePensioenBerekening.jaarlijksRendementBeleggingen"
+					class="form-control" id="jaarlijksRendementBeleggingen" name="jaarlijksRendementBeleggingen"
+					placeholder="Invoer Jaarlijks rendement beleggingen (3.0)" required
+					#jaarlijksRendementBeleggingen="ngModel">
+			</div>
+
+			<div *ngIf="jaarlijksRendementBeleggingen.invalid && (jaarlijksRendementBeleggingen.dirty || jaarlijksRendementBeleggingen.touched)"
+				class="alert alert-danger">Jaarlijks rendement beleggingen is verplicht</div>
+
+			<!--end jaarlijksRendementBeleggingen-->
+
+
+
+			<button type="submit" [disabled]="!verwachteWaardePensioenBerekeningForm.form.valid"
+				class="btn btn-info">Bereken</button>
+		</form>
+	</div>
+</div>

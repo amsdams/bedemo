@@ -1,0 +1,42 @@
+<!-- 
+  id?: number;
+ voltijdSalaris?: number;
+deeltijdPercentage?: number;
+voltijdFranchise?: number;
+premiePercentage?: number;  
+    jaarlijksePremieStortingResultaat?: number;
+
+	 -->
+<div class="card my-5">
+	<div class="card-body">
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">#</th>
+
+					<th scope="col">Full-time salaris</th>
+					<th scope="col">Parttime percentage</th>
+
+					<th scope="col">Franchise regeling</th>
+					<th scope="col">Beschikbare premie percentage</th>
+
+					<th scope="col">Berekening</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let jaarlijksePremieStortingBerekening of jaarlijksePremieStortingBerekeningen">
+					<td>{{ jaarlijksePremieStortingBerekening.id }}</td>
+
+					<td>{{ jaarlijksePremieStortingBerekening.voltijdSalaris }}</td>
+					<td>{{ jaarlijksePremieStortingBerekening.deeltijdPercentage}}</td>
+
+					<td>{{ jaarlijksePremieStortingBerekening.voltijdFranchise }}</td>
+					<td>{{jaarlijksePremieStortingBerekening.premiePercentage }}</td>
+					<td>{{jaarlijksePremieStortingBerekening.jaarlijksePremieStortingResultaat}}</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

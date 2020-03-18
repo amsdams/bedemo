@@ -1,0 +1,41 @@
+<!-- 
+
+gewenstePensioenLeeftijdDeelnemer?: number;
+	huidigeLeeftijdDeelnemer?: number;
+	huidigeWaardeBeleggingen?: number;
+	id?: number;
+	jaarlijksRendementBeleggingen?: number;
+	jaarlijksePremieStorting?: number;
+	verwachteWaardePensioenResultaat?: number;
+	
+	 -->
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Huidige leeftijd deelnemer</th>
+          <th scope="col">Gewenste pensioenleeftijd deelnemer</th>
+          <th scope="col">Huidige waarde beleggingen</th>
+          <th scope="col">Jaarlijkse premie storting</th>
+          <th scope="col">Jaarlijks rendement beleggingen</th>
+          <th scope="col">Berekening</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let verwachteWaardePensioenBerekening of verwachteWaardePensioenBerekeningen">
+          <td>{{ verwachteWaardePensioenBerekening.id }}</td>
+
+          <td>{{ verwachteWaardePensioenBerekening.huidigeLeeftijdDeelnemer }}</td>
+          <td>{{ verwachteWaardePensioenBerekening.gewenstePensioenLeeftijdDeelnemer }}</td>
+          <td>{{ verwachteWaardePensioenBerekening.huidigeWaardeBeleggingen }}</td>
+          <td>{{ verwachteWaardePensioenBerekening.jaarlijksePremieStorting }}</td>
+          <td>{{ verwachteWaardePensioenBerekening.jaarlijksRendementBeleggingen }}</td>
+          <td>{{ verwachteWaardePensioenBerekening.verwachteWaardePensioenResultaat }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

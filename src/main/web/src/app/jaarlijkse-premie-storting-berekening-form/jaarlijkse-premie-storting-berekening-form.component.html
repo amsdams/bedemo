@@ -1,0 +1,71 @@
+<!--
+
+	id?: number;
+	
+	voltijdSalaris?: number;
+	deeltijdPercentage?: number;
+	voltijdFranchise?: number;
+	premiePercentage?: number;
+	
+    jaarlijksePremieStortingResultaat?: number;
+    
+-->
+
+<div class="card my-5">
+	<div class="card-body">
+		<form (ngSubmit)="onSubmit()" #jaarlijksePremieStortingBerekeningForm="ngForm">
+			<div class="form-group">
+				<label for="voltijdSalaris">Full-time salaris</label> <input type="number"
+					[(ngModel)]="jaarlijksePremieStortingBerekening.voltijdSalaris" class="form-control"
+					id="voltijdSalaris" name="voltijdSalaris" placeholder="Invoer Full-time salaris (40000.00)" required
+					#voltijdSalaris="ngModel" >
+			</div>
+
+
+			<div *ngIf="voltijdSalaris.invalid && (voltijdSalaris.dirty || voltijdSalaris.touched)"
+				class="alert alert-danger">Full-time salaris
+				is verplicht</div>
+
+
+			<div class="form-group">
+				<label for="deeltijdPercentage">Parttime percentage</label> <input type="number"
+					[(ngModel)]="jaarlijksePremieStortingBerekening.deeltijdPercentage" class="form-control"
+					id="deeltijdPercentage" name="deeltijdPercentage" placeholder="Invoer Parttime percentage (100)" required
+					#deeltijdPercentage="ngModel">
+			</div>
+
+
+			<div *ngIf="deeltijdPercentage.invalid && (deeltijdPercentage.dirty || deeltijdPercentage.touched)"
+				class="alert alert-danger">Parttime percentage
+				is verplicht</div>
+
+			<div class="form-group">
+				<label for="voltijdFranchise">Franchise regeling</label> <input type="number"
+					[(ngModel)]="jaarlijksePremieStortingBerekening.voltijdFranchise" class="form-control"
+					id="voltijdFranchise" name="voltijdFranchise" placeholder="Invoer Franchise regeling (15599.00)" required
+					#voltijdFranchise="ngModel">
+			</div>
+
+
+
+			<div *ngIf="voltijdFranchise.invalid && (voltijdFranchise.dirty || voltijdFranchise.touched)"
+				class="alert alert-danger">Franchise regeling
+				is verplicht</div>
+
+			<div class="form-group">
+				<label for="premiePercentage">Beschikbare premie percentage</label> <input type="number"
+					[(ngModel)]="jaarlijksePremieStortingBerekening.premiePercentage" class="form-control"
+					id="premiePercentage" name="premiePercentage" placeholder="Invoer Beschikbare premie percentage (5.0)"
+					required #premiePercentage="ngModel">
+			</div>
+
+
+			<div *ngIf="premiePercentage.invalid && (premiePercentage.dirty || premiePercentage.touched)"
+				class="alert alert-danger">Beschikbare premie percentage
+				is verplicht</div>
+
+			<button type="submit" [disabled]="!jaarlijksePremieStortingBerekeningForm.form.valid"
+				class="btn btn-info">Bereken</button>
+		</form>
+	</div>
+</div>
