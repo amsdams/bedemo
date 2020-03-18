@@ -52,6 +52,8 @@ cd src/main/web/
 ng e2e
 ```
 
+see [angular README](src/main/web/README.md)
+
 ## development backend
 
 ```bash
