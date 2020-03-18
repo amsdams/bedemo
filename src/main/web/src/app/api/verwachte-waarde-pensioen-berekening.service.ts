@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { VerwachteWaardePensioenBerekening } from '../model/models';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class VerwachteWaardePensioenBerekeningService {
 
 
 	private baseUrl: string;
+	;
 
 	constructor(private http: HttpClient) {
-		this.baseUrl = 'http://localhost:8080/api/verwachtewaardepensioenberekeningen';
+		this.baseUrl = environment.baseUrl + '/verwachtewaardepensioenberekeningen';
 	}
 
 	public getAll(): Observable<VerwachteWaardePensioenBerekening[]> {

@@ -15,7 +15,7 @@ public class JaarlijksePremieStortingBerekening {
 	@Id
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
 	//@SequenceGenerator(name = "sequenceGenerator")
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	/* Full-time salaris */
