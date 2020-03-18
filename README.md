@@ -67,3 +67,11 @@ mvn clean install
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
 ```
+
+# deploying
+```bash
+heroku login
+heroku create
+git push heroku master
+heroku open
+```
