@@ -28,17 +28,17 @@ describe('workspace-project JaarlijksePremieStortingBerekeningFormPage', () => {
 
     page.getBerekenButton().click();
 
-    browser.driver.wait(function () {
-      return browser.driver.getCurrentUrl().then(function (url) {
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
         return (/toon-alle-jaarlijksepremiestortingberekeningen/).test(url);
       });
-    }, timeout).then(function () {
+    }, timeout).then(function() {
       return;
     });
     expect(browser.getCurrentUrl()).toContain('/toon-alle-jaarlijksepremiestortingberekeningen');
 
 
-    //pageResult.navigateTo();
+    // pageResult.navigateTo();
 
     expect(pageResult.getLastRowCell()).toEqual('434.38255000000004');
   });
@@ -53,17 +53,17 @@ describe('workspace-project JaarlijksePremieStortingBerekeningFormPage', () => {
 
     page.getBerekenButton().click();
 
-    browser.driver.wait(function () {
-      return browser.driver.getCurrentUrl().then(function (url) {
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
         return (/toon-alle-jaarlijksepremiestortingberekeningen/).test(url);
       });
-    }, timeout).then(function () {
+    }, timeout).then(function() {
       return;
     });
     expect(browser.getCurrentUrl()).toContain('/toon-alle-jaarlijksepremiestortingberekeningen');
 
 
-    //pageResult.navigateTo();
+    // pageResult.navigateTo();
 
     expect(pageResult.getLastRowCell()).toEqual('1220.05');
   });

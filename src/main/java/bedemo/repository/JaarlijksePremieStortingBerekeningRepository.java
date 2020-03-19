@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import bedemo.service.domain.JaarlijksePremieStortingBerekening;
 
-;
 
 @SuppressWarnings("unused")
 @Repository

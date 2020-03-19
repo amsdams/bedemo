@@ -11,7 +11,7 @@ export class VerwachteWaardePensioenBerekeningService {
 
 
 	private baseUrl: string;
-	;
+
 
 	constructor(private http: HttpClient) {
 		this.baseUrl = environment.baseUrl + '/verwachtewaardepensioenberekeningen';

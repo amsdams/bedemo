@@ -2,7 +2,7 @@ import { browser, by, element, promise } from 'protractor';
 
 export class JaarlijksePremieStortingBerekeningListPage {
   navigateTo() {
-    return browser.get(browser.baseUrl+'/toon-alle-jaarlijksepremiestortingberekeningen') as Promise<any>;
+    return browser.get(browser.baseUrl + '/toon-alle-jaarlijksepremiestortingberekeningen') as Promise<any>;
   }
 
   getTitleText() {
@@ -20,7 +20,7 @@ export class JaarlijksePremieStortingBerekeningListPage {
 
   }
 
-  
 
-  
+
+
 }

@@ -2,7 +2,7 @@ import { browser, by, element, promise } from 'protractor';
 
 export class VerwachteWaardePensioenBerekeningListPage {
   navigateTo() {
-    return browser.get(browser.baseUrl+'/toon-alle-verwachtewaardepensioenberekeningen') as Promise<any>;
+    return browser.get(browser.baseUrl + '/toon-alle-verwachtewaardepensioenberekeningen') as Promise<any>;
   }
 
   getTitleText() {
@@ -15,7 +15,7 @@ export class VerwachteWaardePensioenBerekeningListPage {
 
   }
 
-  
 
-  
+
+
 }

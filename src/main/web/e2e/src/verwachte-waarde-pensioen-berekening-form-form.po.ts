@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class VerwachteWaardePensioenBerekeningFormPage {
   navigateTo() {
-    return browser.get(browser.baseUrl+'/maak-verwachtewaardepensioenberekening') as Promise<any>;
+    return browser.get(browser.baseUrl + '/maak-verwachtewaardepensioenberekening') as Promise<any>;
   }
 
   getTitleText() {
@@ -11,13 +11,13 @@ export class VerwachteWaardePensioenBerekeningFormPage {
 /*
 huidigeLeeftijdDeelnemer?: number;
 	gewenstePensioenLeeftijdDeelnemer?: number;
-	
+
 	huidigeWaardeBeleggingen?: number;
 	jaarlijksePremieStorting?: number;
 	jaarlijksRendementBeleggingen?: number;
-	
+
   verwachteWaardePensioenResultaat?: number;
-  
+
     */
 
   getHuidigeLeeftijdDeelnemerInput() {

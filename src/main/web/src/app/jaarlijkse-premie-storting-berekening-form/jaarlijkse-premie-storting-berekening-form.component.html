@@ -14,7 +14,43 @@
 <div class="card my-5">
 	<div class="card-body">
 		<form (ngSubmit)="onSubmit()" #jaarlijksePremieStortingBerekeningForm="ngForm">
+
 			<div class="form-group">
+				<label for="selectedWerkgever">Selecteer werkgever</label>
+
+				<select [(ngModel)]="selectedWerkgever" (ngModelChange)="onChangeSelectedWerkgever($event)" name="selectedWerkgever">
+					<option></option>
+					<option *ngFor="let werkgever of werkgevers" [ngValue]="werkgever">{{ werkgever.id }} - {{ werkgever.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			<div class="form-group">
+				<label for="selectedRegeling">Selecteer regeling</label>
+
+				<select [(ngModel)]="selectedRegeling" (ngModelChange)="onChangeSelectedRegeling($event)" name="selectedRegeling">
+					<option></option>
+					<option *ngFor="let regeling of regelingen" [ngValue]="regeling">{{ regeling.id }} - {{ regeling.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			<div class="form-group">
+				<label for="selectedWerknemer">Selecteer werknemer</label>
+
+				<select [(ngModel)]="selectedWerknemer" (ngModelChange)="onChangeSelectedWerknemer($event)" name="selectedWerknemer">
+					<option></option>
+					<option *ngFor="let werknemer of werknemers" [ngValue]="werknemer">{{ werknemer.id }} - {{ werknemer.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			<div class="form-group">
+
+
 				<label for="voltijdSalaris">Full-time salaris</label> <input type="number"
 					[(ngModel)]="jaarlijksePremieStortingBerekening.voltijdSalaris" class="form-control"
 					id="voltijdSalaris" name="voltijdSalaris" placeholder="Invoer Full-time salaris (40000.00)" required

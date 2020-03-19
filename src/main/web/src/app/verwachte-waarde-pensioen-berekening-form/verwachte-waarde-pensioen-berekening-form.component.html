@@ -15,6 +15,38 @@ id?: number;
 <div class="card my-5">
 	<div class="card-body">
 		<form (ngSubmit)="onSubmit()" #verwachteWaardePensioenBerekeningForm="ngForm">
+
+			<div class="form-group">
+				<label for="selectedWerkgever">Selecteer werkgever</label>
+
+				<select [(ngModel)]="selectedWerkgever" (ngModelChange)="onChangeSelectedWerkgever($event)" name="selectedWerkgever">
+					<option *ngFor="let werkgever of werkgevers" [ngValue]="werkgever">{{ werkgever.id }} - {{ werkgever.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			<div class="form-group">
+				<label for="selectedRegeling">Selecteer regeling</label>
+
+				<select [(ngModel)]="selectedRegeling" (ngModelChange)="onChangeSelectedRegeling($event)" name="selectedRegeling">
+					<option *ngFor="let regeling of regelingen" [ngValue]="regeling">{{ regeling.id }} - {{ regeling.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			<div class="form-group">
+				<label for="selectedWerknemer">Selecteer werknemer</label>
+
+				<select [(ngModel)]="selectedWerknemer" (ngModelChange)="onChangeSelectedWerknemer($event)" name="selectedWerknemer">
+					<option *ngFor="let werknemer of werknemers" [ngValue]="werknemer">{{ werknemer.id }} - {{ werknemer.naam }}</option>
+				</select>
+
+			
+			</div>
+
+			
 			<!--start huidigeLeeftijdDeelnemer-->
 			<div class="form-group">
 				<label for="huidigeLeeftijdDeelnemer">Huidige leeftijd deelnemer</label>

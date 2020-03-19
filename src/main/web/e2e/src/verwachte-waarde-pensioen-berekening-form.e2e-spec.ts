@@ -28,17 +28,17 @@ describe('workspace-project VerwachteWaardePensioenBerekeningFormPage', () => {
     page.getJaarlijksRendementBeleggingenInput().sendKeys('3.00');
     page.getBerekenButton().click();
 
-    browser.driver.wait(function () {
-      return browser.driver.getCurrentUrl().then(function (url) {
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
         return (/toon-alle-verwachtewaardepensioenberekeningen/).test(url);
       });
-    }, timeout).then(function () {
+    }, timeout).then(function() {
       return;
     });
     expect(browser.getCurrentUrl()).toContain('/toon-alle-verwachtewaardepensioenberekeningen');
 
 
-    //pageResult.navigateTo();
+    // pageResult.navigateTo();
 
     expect(pageResult.getLastRowCell()).toEqual('24548.959464041167');
   });
@@ -53,17 +53,17 @@ describe('workspace-project VerwachteWaardePensioenBerekeningFormPage', () => {
     page.getJaarlijksRendementBeleggingenInput().sendKeys('3.00');
     page.getBerekenButton().click();
 
-    browser.driver.wait(function () {
-      return browser.driver.getCurrentUrl().then(function (url) {
+    browser.driver.wait(function() {
+      return browser.driver.getCurrentUrl().then(function(url) {
         return (/toon-alle-verwachtewaardepensioenberekeningen/).test(url);
       });
-    }, timeout).then(function () {
+    }, timeout).then(function() {
       return;
     });
     expect(browser.getCurrentUrl()).toContain('/toon-alle-verwachtewaardepensioenberekeningen');
 
 
-    //pageResult.navigateTo();
+    // pageResult.navigateTo();
 
     expect(pageResult.getLastRowCell()).toEqual('68470.91957947443');
   });

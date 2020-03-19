@@ -2,7 +2,7 @@ import { browser, by, element } from 'protractor';
 
 export class JaarlijksePremieStortingBerekeningFormPage {
   navigateTo() {
-    return browser.get(browser.baseUrl+'/maak-jaarlijksepremiestortingberekening') as Promise<any>;
+    return browser.get(browser.baseUrl + '/maak-jaarlijksepremiestortingberekening') as Promise<any>;
   }
 
   getTitleText() {

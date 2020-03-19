@@ -67,10 +67,10 @@ public class JaarlijksePremieStortingBerekeningResource {
 	@GetMapping("/jaarlijksepremiestortingberekeningen/{id}")
 	public ResponseEntity<JaarlijksePremieStortingBerekening> getJaarlijksePremieStortingBerekening(@PathVariable Long id) {
 
-		Optional<JaarlijksePremieStortingBerekening> employee = jaarlijksePremieStortingBerekeningRepository.findById(id);
-		if (!employee.isPresent()) {
+		Optional<JaarlijksePremieStortingBerekening> jaarlijksePremieStortingBerekening = jaarlijksePremieStortingBerekeningRepository.findById(id);
+		if (!jaarlijksePremieStortingBerekening.isPresent()) {
 			ResponseEntity.notFound();
 		}
-		return ResponseEntity.ok(employee.get());
+		return ResponseEntity.ok(jaarlijksePremieStortingBerekening.get());
 	}
 }
